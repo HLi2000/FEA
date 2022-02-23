@@ -115,9 +115,10 @@ def main():
 
     # Apply the nodal force BCs
     F = np.zeros(shape=(2 * NN, 1))
-    fs = [30]
-    nodes = [24]
-    dir = [0] # 0 is horizontal 1 is v
+
+    fs = [30, 30] # force values
+    nodes = [24, 33] # nodes
+    dir = [0, 1] # 0 is horizontal 1 is v
     for i in range(len(fs)):
         n = (nodes[i] - 1) * 2 + dir[i]
         F[n] += fs[i]
